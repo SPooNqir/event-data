@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package v1;
+
+option go_package = ".;v1";
+
+import "bq_table.proto";
+import "bq_field.proto";
+
+message IdentityEvent {
+  option (v1.bigquery_opts).table_name = "IdentityEvent";
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (v1.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"DataType"
+  string DataType = 2 [
+    (v1.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"type"
+  string Type = 3;
+  // @inject_tag: json:"name"
+  string Name = 4;
+  // @inject_tag: json:"email"
+  string Email = 5;
+  // @inject_tag: json:"message"
+  string Message = 6;
+}
