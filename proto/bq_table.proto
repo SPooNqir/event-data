@@ -13,9 +13,9 @@
 // limitations under the License.
 
 syntax = "proto3";
-package v1;
+package event_data;
 
-option go_package = ".;v1";
+option go_package = "github.com/slavayssiere-spoon/event-data";
 
 import "google/protobuf/descriptor.proto";
 

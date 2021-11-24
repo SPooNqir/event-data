@@ -37,7 +37,6 @@ protoc \
   -I proto \
   -I $GOPATH/src/include \
   --go_out=$GEN_PATH      --go_opt=paths=source_relative \
-  --bq-schema_out=. \
   proto/IdentityEvent.proto
 
 echo "gen identityevent - add tag"
