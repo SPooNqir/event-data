@@ -42,6 +42,17 @@ protoc \
 echo "gen identityevent - add tag"
 protoc-go-inject-tag -input=./IdentityEvent.pb.go
 
+echo "gen alert overflow"
+protoc \
+  -I proto \
+  -I $GOPATH/src/include \
+  --go_out=$GEN_PATH      --go_opt=paths=source_relative \
+  proto/DataOverflowAlert.proto
+
+echo "gen alert overflow - add tag"
+protoc-go-inject-tag -input=./DataOverflowAlert.pb.go
+
+
 echo "mod tidy"
 go mod tidy
 
