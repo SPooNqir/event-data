@@ -52,6 +52,15 @@ protoc \
 echo "gen alert overflow - add tag"
 protoc-go-inject-tag -input=./DataOverflowAlert.pb.go
 
+echo "gen alert not connected"
+protoc \
+  -I proto \
+  -I $GOPATH/src/include \
+  --go_out=$GEN_PATH      --go_opt=paths=source_relative \
+  proto/RobotNotConnectedAlert.proto
+
+echo "gen alert not connected - add tag"
+protoc-go-inject-tag -input=./RobotNotConnectedAlert.pb.go
 
 echo "mod tidy"
 go mod tidy
