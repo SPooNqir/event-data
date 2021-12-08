@@ -42,4 +42,7 @@ message RobotHealthAlert {
 
   // @inject_tag: json:"from"
 	string from = 6;
+
+  // @inject_tag: json:"identity"
+	string identity = 7;
 }
