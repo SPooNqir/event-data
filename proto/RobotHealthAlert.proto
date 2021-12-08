@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package event_data;
+
+option go_package = "github.com/slavayssiere-spoon/event-data";
+
+import "bq_table.proto";
+import "bq_field.proto";
+
+message RHReplace {
+  string robotEmail = 1;
+  string errorMessage = 2;
+  string timestamp = 3;
+  string status = 4;
+}
+
+message RobotHealthAlert {
+  option (event_data.bigquery_opts).table_name = "RobotHealthAlert";
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (event_data.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"DataType"
+  string DataType = 2 [
+    (event_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"uid"
+  string uid = 3;
+
+  // @inject_tag: json:"tos"
+	repeated string tos = 4;
+
+  // @inject_tag: json:"replaces"
+	RHReplace replaces = 5;
+
+  // @inject_tag: json:"from"
+	string from = 6;
+}
