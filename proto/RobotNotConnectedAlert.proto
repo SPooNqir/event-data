@@ -18,9 +18,16 @@ message RobotNotConnectedAlert {
     }
   ];
 
+  // @inject_tag: json:"DataType"
+  string DataType = 2 [
+    (event_data.bigquery) = {
+      require: true
+    }
+  ];
+
   // @inject_tag: json:"email"
-  string Email = 2;
+  string Email = 3;
 
   // @inject_tag: json:"groups"
-  repeated groups.Group groups = 3;
+  repeated groups.Group groups = 4;
 }
