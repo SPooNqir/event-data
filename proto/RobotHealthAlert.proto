@@ -12,6 +12,8 @@ message RHReplace {
   string errorMessage = 2;
   string timestamp = 3;
   string status = 4;
+  string title = 5;
+  string robotName = 6;
 }
 
 message RobotHealthAlert {

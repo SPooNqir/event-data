@@ -6,6 +6,7 @@ option go_package = "github.com/slavayssiere-spoon/event-data";
 
 import "bq_table.proto";
 import "bq_field.proto";
+import "RobotHealthAlert.proto";
 
 message RobotNotConnectedAlert {
   option (event_data.bigquery_opts).table_name = "RobotNotConnectedAlert";
@@ -26,4 +27,7 @@ message RobotNotConnectedAlert {
 
   // @inject_tag: json:"email"
   string Email = 3;
+
+  // @inject_tag: json:"replaces"
+  event_data.RHReplace replaces = 4;
 }
