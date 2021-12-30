@@ -5,3 +5,5 @@ proto/users.proto
 proto/robots.proto
 proto/health.proto
 health-data
+protoc-3.15.8-linux-x86_64.zip
+protoc-3.19.1-linux-x86_64.zip

@@ -30,4 +30,10 @@ message DataOverflowAlert {
 
   // @inject_tag: json:"replaces"
   event_data.RHReplace replaces = 4;
+
+  // @inject_tag: json:"max_value"
+  int64 MaxValue = 5;
+
+  // @inject_tag: json:"count"
+  int64 Count = 6;
 }
