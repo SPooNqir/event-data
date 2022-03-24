@@ -4,19 +4,19 @@ GEN_PATH="."
 GOPATH=$(go env GOPATH)
 
 AUTHORIZATIONS_VERSION="master"
-curl -o proto/authorizations.proto "https://raw.githubusercontent.com/slavayssiere-spoon/authorizations/$AUTHORIZATIONS_VERSION/proto/authorizations.proto"
+curl -o proto/authorizations.proto "https://raw.githubusercontent.com/SPooNqir/authorizations/$AUTHORIZATIONS_VERSION/proto/authorizations.proto"
 
 GROUPS_VERSION="master"
-curl -o proto/groups.proto "https://raw.githubusercontent.com/slavayssiere-spoon/groups/$GROUPS_VERSION/proto/groups.proto"
+curl -o proto/groups.proto "https://raw.githubusercontent.com/SPooNqir/groups/$GROUPS_VERSION/proto/groups.proto"
 
 USERS_VERSION="master"
-curl -o proto/users.proto "https://raw.githubusercontent.com/slavayssiere-spoon/users/$USERS_VERSION/proto/users.proto"
+curl -o proto/users.proto "https://raw.githubusercontent.com/SPooNqir/users/$USERS_VERSION/proto/users.proto"
 
 ROBOTS_VERSION="master"
-curl -o proto/robots.proto "https://raw.githubusercontent.com/slavayssiere-spoon/robots/$ROBOTS_VERSION/proto/robots.proto"
+curl -o proto/robots.proto "https://raw.githubusercontent.com/SPooNqir/robots/$ROBOTS_VERSION/proto/robots.proto"
 
 HEALTH_VERSION="master"
-curl -o proto/health.proto "https://raw.githubusercontent.com/slavayssiere-spoon/health/$HEALTH_VERSION/proto/health.proto"
+curl -o proto/health.proto "https://raw.githubusercontent.com/SPooNqir/health/$HEALTH_VERSION/proto/health.proto"
 
 echo "gen bq_field"
 protoc \
